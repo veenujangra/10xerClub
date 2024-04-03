@@ -24,7 +24,7 @@ export default class Navigation {
     this.target = event.target.closest(this.menuButton) || 0
     if (this.target) {
       this.menuToggle()
-      document.body.classList.toggle('overflow-hidden')
+      // document.body.classList.toggle('overflow-hidden')
       document.documentElement.classList.toggle('menu-open')
       this.target.classList.toggle('is-open')
     }

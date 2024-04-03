@@ -82,6 +82,11 @@ body {
   }
 }
 
+.menu-open {
+  body {
+    overflow: hidden;
+  }
+}
 .overflow-hidden {
   overflow: hidden;
 }
