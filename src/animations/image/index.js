@@ -26,12 +26,10 @@ export default class ImageAnimation extends Animation {
     this.tl.fromTo(
       this.element,
       {
-        // autoAlpha: 0,
-        height: 0,
+        autoAlpha: 0,
       },
       {
-        height: '100%',
-        // autoAlpha: 1,
+        autoAlpha: 1,
         ease: this.animationOptions.ease,
         duration: this.animationOptions.duration,
         delay: this.animationOptions.delay,

@@ -1,6 +1,7 @@
 import './style.scss'
 import Page from './src/Page'
 import Navigation from './src/navbar'
+import Home from './src/home'
 
 class App {
   constructor(options) {
@@ -25,6 +26,10 @@ class App {
 
     await document.fonts.ready
     document.documentElement.classList.add('loaded')
+
+    this.home = new Home({
+      sprintNav: '.sprint_check_wrapper',
+    })
 
     this.page.create()
     this.page.show()

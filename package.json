@@ -1,5 +1,5 @@
 {
-  "name": "@pixeto/sabbath",
+  "name": "@pixeto/10xerClub",
   "version": "1.0.1",
   "type": "module",
   "author": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/veenujangra/Sabbath.git"
+    "url": "https://github.com/veenujangra/10xerClub.git"
   },
   "scripts": {
     "dev": "vite",

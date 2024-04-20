@@ -5,6 +5,7 @@ import ImageAnimation from '../animations/image'
 import SlideUp from '../animations/slideup'
 import gsap from 'gsap'
 import Lenis from '@studio-freight/lenis'
+import HomeHero from '../animations/home hero'
 
 export default class Page {
   constructor(options) {
@@ -14,6 +15,7 @@ export default class Page {
       description: '[dd]',
       slideUp: '[ds]',
       image: '[di]',
+      homeHero: '.home_hero_media_impact_wrapper',
     }
     this.createSmoothScroll()
   }
@@ -71,6 +73,11 @@ export default class Page {
       return new SlideUp({ element })
     })
     this.animations.push([...this.animationSlideup])
+
+    this.animationHomeHero = map(this.elements.homeHero, (element) => {
+      return new HomeHero({ element })
+    })
+    this.animations.push([...this.animationHomeHero])
   }
 
   show(animation) {
