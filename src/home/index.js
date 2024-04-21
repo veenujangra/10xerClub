@@ -1,39 +1,32 @@
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/src/ScrollTrigger'
+
 export default class Home {
   constructor(options) {
     this.sprintNavs = document.querySelectorAll(options.sprintNav)
-
+    this.sprintList = document.querySelectorAll(options.sprintList)
     this.create()
   }
 
   create() {
-    this.sprintNavs.forEach((springNav) => {
-      const links = [...springNav.querySelectorAll('a')]
-      links.forEach((link) => {
-        const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation, index) => {
-            if (mutation.attributeName === 'class') {
-              console.log(mutation.target)
-              // const currentClassState = mutation.target
+    gsap.registerPlugin(ScrollTrigger)
 
-              if (currentClassState) {
-                this.addActiveClass(links, index)
-              }
+    this.sprintList.forEach((item, index) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top center',
+        // markers: true,
+        onUpdate: (self) => {
+          this.sprintNavs.forEach((nav) => {
+            const links = nav.querySelectorAll('a')
+            if (self.direction === 1) {
+              links[index].classList.add('is--active')
+            } else if (self.direction === -1) {
+              links[index].classList.remove('is--active')
             }
           })
-        })
-
-        observer.observe(link, { attributes: true })
+        },
       })
     })
-  }
-
-  addActiveClass(arr, index) {
-    arr.forEach((item) => {
-      item.classList.remove('is--active')
-    })
-
-    for (let i = 0; i < index; i++) {
-      arr.classList.add('is--active')
-    }
   }
 }

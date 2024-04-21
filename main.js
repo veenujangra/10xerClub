@@ -29,6 +29,7 @@ class App {
 
     this.home = new Home({
       sprintNav: '.sprint_check_wrapper',
+      sprintList: '.sprint_list_item',
     })
 
     this.page.create()
