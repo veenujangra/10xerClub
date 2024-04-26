@@ -17,7 +17,9 @@ export default class Page {
       image: '[di]',
       homeHero: '.home_hero_media_impact_wrapper',
     }
-    this.createSmoothScroll()
+    if (window.innerWidth > 991) {
+      this.createSmoothScroll()
+    }
   }
 
   create() {
