@@ -20,63 +20,42 @@ export default class HomeHero {
         {
           delay: 3,
           autoAlpha: 0,
-          y: '-100%',
+          y: '-50%',
         }
       )
       // reset 0
       .set(text[0], {
-        y: '100%',
+        y: '50%',
+        autoAlpha: 0,
       })
-      // start 1
-      .fromTo(
-        text[1],
-        {
+
+    for (let i = 1; i < text.length; i++) {
+      this.tl
+        .fromTo(
+          text[i],
+          {
+            autoAlpha: 0,
+            y: '50%',
+          },
+          {
+            autoAlpha: 1,
+            y: '0%',
+          },
+          '>-0.2'
+        )
+        .to(text[i], {
           autoAlpha: 0,
-          y: '0%',
-        },
-        {
-          autoAlpha: 1,
-          y: '-100%',
-        },
-        '>-0.3'
-      )
-      .set(text[2], {
-        autoAlpha: 0,
-        y: '-100%',
-      })
-      .to(text[1], {
-        autoAlpha: 0,
-        y: '-200%',
-        delay: 3,
-      })
-      // reset 1
-      .set(text[1], {
+          delay: 3,
+          y: '-50%',
+        })
+    }
+    this.tl.to(
+      text[0],
+      {
+        autoAlpha: 1,
         y: '0%',
-      })
-      .to(
-        text[2],
-        {
-          autoAlpha: 1,
-          y: '-200%',
-        },
-        '>-0.3'
-      )
-      .to(text[2], {
-        autoAlpha: 0,
-        y: '-300%',
-        delay: 3,
-      })
-      // reset 2
-      .set(text[2], {
-        y: '0%',
-      })
-      .to(
-        text[0],
-        {
-          autoAlpha: 1,
-          y: '0%',
-        },
-        '>-0.3'
-      )
+      },
+      '>-0.2'
+    )
   }
 }

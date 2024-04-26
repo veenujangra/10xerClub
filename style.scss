@@ -92,4 +92,48 @@ body {
 }
 
 .home_hero_media_impact_wrapper {
+  position: relative;
+  overflow: visible;
+  div {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+.loaded {
+  .home_perks_media_wrapper {
+    .home_perks_media:nth-child(2) {
+      transform: scale(0.85);
+      animation: pulse 5s linear 2.5s infinite;
+    }
+    .home_perks_media:nth-child(3) {
+      transform: scale(1.05);
+      opacity: 0.45;
+      animation: pulse 5s linear 5s infinite;
+    }
+    .home_perks_media:nth-child(4) {
+      transform: scale(0.45);
+      opacity: 0;
+      animation: pulse 5s linear 1.25s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.45);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(0.85);
+        opacity: 1;
+      }
+      99% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.45);
+      }
+    }
+  }
 }

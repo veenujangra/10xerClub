@@ -41,7 +41,7 @@ export default class Page {
     this.lenis = new Lenis({
       lerp: 0.075,
       smoothTouch: true,
-      syncTouchLerp: 0.075,
+      // syncTouchLerp: 0.05,
     })
     this.update()
   }
