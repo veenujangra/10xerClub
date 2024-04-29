@@ -11,7 +11,7 @@ export default class Title extends Animation {
       delay: this.element.getAttribute('dde') || 0,
       stagger: this.element.getAttribute('data-stagger') || 0.1,
       ease: this.element.getAttribute('data-ease') || 'Power1.easeOut',
-      duration: this.element.getAttribute('data-duration') || 1,
+      duration: this.element.getAttribute('data-duration') || 0.5,
     }
 
     this.create()
