@@ -18,7 +18,7 @@ export default class HomeHero {
           y: '0%',
         },
         {
-          delay: 1,
+          delay: 0.5,
           autoAlpha: 0,
           y: '-50%',
         }
@@ -45,7 +45,7 @@ export default class HomeHero {
         )
         .to(text[i], {
           autoAlpha: 0,
-          delay: 1,
+          delay: 0.5,
           y: '-50%',
         })
     }

@@ -113,12 +113,14 @@ export default class Page {
   }
 
   onScroll() {
-    if (this.lenis.direction === -1) {
-      document.documentElement.classList.add('scroll-up')
-      document.documentElement.classList.remove('scroll-down')
-    } else if (this.lenis.direction === 1) {
-      document.documentElement.classList.remove('scroll-up')
-      document.documentElement.classList.add('scroll-down')
+    if (this.lenis) {
+      if (this.lenis.direction === -1) {
+        document.documentElement.classList.add('scroll-up')
+        document.documentElement.classList.remove('scroll-down')
+      } else if (this.lenis.direction === 1) {
+        document.documentElement.classList.remove('scroll-up')
+        document.documentElement.classList.add('scroll-down')
+      }
     }
   }
 
