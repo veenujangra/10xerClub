@@ -16,6 +16,7 @@ class App {
   createNavigation() {
     this.navigation = new Navigation({
       element: '.navbar',
+      close: '.menu_close',
     })
   }
 

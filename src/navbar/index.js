@@ -5,6 +5,7 @@ export default class Navigation {
     this.element = document.querySelector(options.element)
     this.menuWrapper = '.nav_menu_wrapper'
     this.menuButton = '.menu_button'
+    this.closeModal = document.querySelector(options.close)
 
     this.create()
     this.addEventListeners()
